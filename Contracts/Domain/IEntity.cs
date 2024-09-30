@@ -1,0 +1,7 @@
+namespace Contracts.Domain
+{
+    public interface IEntity 
+    {
+        int Id { get; set; }
+    }
+}
