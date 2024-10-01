@@ -1,6 +1,7 @@
 using Business.IServices;
 using Business.Services;
 using Contracts.Domain;
+using Contracts.Settings;
 using Microsoft.EntityFrameworkCore;
 using ProductAPI.Data;
 using ProductAPI.Data.Entities;
@@ -8,13 +9,14 @@ using ProductAPI.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
+SqlDbSetting serviceSetting = builder.Configuration.GetSection(nameof(SqlDbSetting)).Get<SqlDbSetting>();
 // Add services to the container.
 builder.Services.AddControllers(options =>
 {
     options.SuppressAsyncSuffixInActionNames = false;
 });
 builder.Services.AddDbContext<ProductDbContext>(options => 
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ProductConnection")));
+    options.UseSqlServer(serviceSetting?.ConnectionString));
 
 builder.Services.AddScoped<IRepository<Product>, ProductRepository>();
 builder.Services.AddScoped<IFileService, FileService>();

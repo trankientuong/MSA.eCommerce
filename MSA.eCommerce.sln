@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderAPI", "OrderAPI\OrderA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{DB804A8D-FC63-4082-9459-BF613666C0DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CartAPI", "CartAPI\CartAPI.csproj", "{6EDA0CCF-9595-4C60-AA5A-D89C94F1FD34}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,5 +42,9 @@ Global
 		{DB804A8D-FC63-4082-9459-BF613666C0DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB804A8D-FC63-4082-9459-BF613666C0DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB804A8D-FC63-4082-9459-BF613666C0DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EDA0CCF-9595-4C60-AA5A-D89C94F1FD34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EDA0CCF-9595-4C60-AA5A-D89C94F1FD34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EDA0CCF-9595-4C60-AA5A-D89C94F1FD34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EDA0CCF-9595-4C60-AA5A-D89C94F1FD34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

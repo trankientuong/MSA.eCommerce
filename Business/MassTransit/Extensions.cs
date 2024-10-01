@@ -18,7 +18,12 @@ public static class Extensions
                 var configuration = context.GetService<IConfiguration>();
                 var serviceSetting = configuration.GetSection(nameof(ServiceSetting)).Get<ServiceSetting>();
                 RabbitMQSetting rabitMQSetting = configuration.GetSection(nameof(RabbitMQSetting)).Get<RabbitMQSetting>();
-                configurator.Host(rabitMQSetting.Host);
+                configurator.Host(rabitMQSetting.Host, h => 
+                {
+                    h.Username("user");
+                    h.Password("mypassword");
+                });
+
                 configurator.ConfigureEndpoints(context, new KebabCaseEndpointNameFormatter(serviceSetting.ServiceName, false));
                 configurator.UseMessageRetry(retryPoilicy =>
                 {
