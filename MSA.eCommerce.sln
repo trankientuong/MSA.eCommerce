@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Busine
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CartAPI", "CartAPI\CartAPI.csproj", "{6EDA0CCF-9595-4C60-AA5A-D89C94F1FD34}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{38B3A3A9-6F3B-4D5D-B2F4-4C9FA2FAA880}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,5 +48,9 @@ Global
 		{6EDA0CCF-9595-4C60-AA5A-D89C94F1FD34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EDA0CCF-9595-4C60-AA5A-D89C94F1FD34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EDA0CCF-9595-4C60-AA5A-D89C94F1FD34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38B3A3A9-6F3B-4D5D-B2F4-4C9FA2FAA880}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38B3A3A9-6F3B-4D5D-B2F4-4C9FA2FAA880}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38B3A3A9-6F3B-4D5D-B2F4-4C9FA2FAA880}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38B3A3A9-6F3B-4D5D-B2F4-4C9FA2FAA880}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
