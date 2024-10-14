@@ -34,7 +34,7 @@ public static class IdentityServerConfig
         {
             return new List<ApiResource>()
             {
-                new ApiResource() {
+                new ApiResource("productapi","Product API") {
                     Scopes = new List<string> {"productapi.read", "productapi.write"},
                     ApiSecrets = new List<Secret> { new Secret("Scopesecret".Sha256())},
                     UserClaims = new List<string> {"role"}

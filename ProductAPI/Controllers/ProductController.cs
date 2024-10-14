@@ -1,5 +1,6 @@
 using Business.IServices;
 using Contracts.Domain;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ProductAPI.Data.Dtos;
 using ProductAPI.Data.Entities;
@@ -27,6 +28,7 @@ public class ProductController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Policy = "write_access")]
     public async Task<IActionResult> PostAsync([FromForm] CreateProductDto productDto)
     {
         var product = new Product
