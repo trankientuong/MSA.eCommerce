@@ -2,7 +2,6 @@ namespace CartAPI.Entities;
 
 public class CartDto
 {
-    public string UserId { get; set; } = string.Empty;
     public IEnumerable<CartDetailsDto> CartDetailsDtos { get; set; }
 }
 

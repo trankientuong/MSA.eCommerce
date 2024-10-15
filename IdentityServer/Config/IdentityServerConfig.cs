@@ -6,7 +6,7 @@ public static class IdentityServerConfig
 {
     public static IEnumerable<IdentityResource> IdentityResources
     {
-        get 
+        get
         {
             return new List<IdentityResource>()
             {
@@ -18,12 +18,13 @@ public static class IdentityServerConfig
 
     public static IEnumerable<ApiScope> ApiScopes
     {
-        get 
+        get
         {
             return
             [
                 new ApiScope("productapi.read"),
-                new ApiScope("productapi.write")
+                new ApiScope("productapi.write"),
+                new ApiScope("cartapi.checkout")
             ];
         }
     }
@@ -38,6 +39,10 @@ public static class IdentityServerConfig
                     Scopes = new List<string> {"productapi.read", "productapi.write"},
                     ApiSecrets = new List<Secret> { new Secret("Scopesecret".Sha256())},
                     UserClaims = new List<string> {"role"}
+                },
+                new ApiResource("cartapi", "Cart API") {
+                    Scopes = new List<string> { "cartapi.checkout" },
+                    ApiSecrets = new List<Secret> { new Secret("Scopesecret".Sha256())}
                 }
             };
         }
@@ -72,7 +77,7 @@ public static class IdentityServerConfig
                     RedirectUris = { "http://localhost:4200/auth-callback" },  // URL callback của Angular app sau khi đăng nhập
                     PostLogoutRedirectUris = { "http://localhost:4200/" },  // URL khi đăng xuất
                     AllowedCorsOrigins = { "http://localhost:4200" },  // Cho phép CORS từ Angular
-                    AllowedScopes = { "openid", "profile", "productapi.read", "productapi.write" }  // Các scope mà Angular yêu cầu
+                    AllowedScopes = { "openid", "profile", "productapi.read", "cartapi.checkout" }  // Các scope mà Angular yêu cầu
                 },
                 // product-swagger client using code flow + pkce
                 new Client
@@ -85,6 +90,20 @@ public static class IdentityServerConfig
                     RedirectUris = { "https://localhost:5002/swagger/oauth2-redirect.html" },
                     AllowedCorsOrigins = { "https://localhost:5002" },
                     AllowedScopes = { "openid", "profile", "productapi.read", "productapi.write" },
+
+                    AllowOfflineAccess = true
+                },
+                // cart-swagger client using code flow + pkce
+                new Client
+                {
+                    ClientId = "cart-swagger",
+                    AllowedGrantTypes = GrantTypes.Code,
+                    RequirePkce = true,
+                    RequireClientSecret = false,
+
+                    RedirectUris = { "https://localhost:5004/swagger/oauth2-redirect.html" },
+                    AllowedCorsOrigins = { "https://localhost:5004" },
+                    AllowedScopes = { "openid", "profile", "cartapi.checkout" },
 
                     AllowOfflineAccess = true
                 }

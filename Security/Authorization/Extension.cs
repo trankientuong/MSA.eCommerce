@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace MSA.Common.Security.Authorization;
+namespace Security.Authorization;
 
 public static class Extensions 
 {

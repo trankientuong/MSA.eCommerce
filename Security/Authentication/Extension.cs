@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace MSA.Common.Security.Authentication;
+namespace Security.Authentication;
 
 public static class Extensions 
 {
@@ -33,7 +33,8 @@ public static class Extensions
                     {
                         "https://identity-api:5001/resources",
                         "https://localhost:5001/resources",
-                        "productapi"
+                        "productapi",
+                        "cartapi"
                     }
                 };
             });
